@@ -1,4 +1,4 @@
-name: aws cli environment
+name: aws cli environment (configure-aws-credentials)
 
 on:
   push:
