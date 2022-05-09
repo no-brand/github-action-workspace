@@ -1,4 +1,4 @@
-name: aws cli environment
+name: aws cli environment (install)
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
         run: |
           curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
           unzip awscliv2.zip
-          sudo ./aws/install --upgrade
+          sudo ./aws/install --update
 
       - name: Test AWS CLI commands
         run: |
