@@ -15,4 +15,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Conventional commits
-        uses: no-brand/conventional-commits-action@v1.1
+        uses: no-brand/conventional-commits-action@v1.2
