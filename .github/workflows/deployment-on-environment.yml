@@ -3,6 +3,9 @@ name: deployment-on-environment
 on:
   push:
     branches: [ chore/github-action ]
+  pull_request_target:
+    branches: [ main ]
+    types: [closed]
 
 jobs:
   build:
@@ -13,7 +16,7 @@ jobs:
   deployment:
     name: Deployment
     needs: [ build ]
-    if: startsWith(github.ref, 'refs/heads/chore/')
+    if: startsWith(github.ref, 'refs/heads/main') && github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
     environment: ${{ github.ref_name }}
 
     runs-on: ubuntu-latest
