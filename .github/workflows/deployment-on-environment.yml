@@ -8,11 +8,13 @@ jobs:
   build:
     uses: no-brand/github-action-workspace/.github/workflows/build-and-test.yml@chore/github-action
 
+  # ${{ github.ref }} : refs/heads/chore/github-action
+
   deployment:
     name: Deployment
     needs: [ build ]
     if: startsWith(github.ref, 'refs/heads/chore/')
-    environment: ${{ github.ref }}
+    environment: ${{ github.ref_name }}
 
     runs-on: ubuntu-latest
 
