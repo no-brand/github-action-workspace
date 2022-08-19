@@ -10,7 +10,7 @@ jobs:
 
   deployment:
     name: Deployment
-    need: [ build ]
+    needs: [ build ]
     if: startsWith(github.ref, 'refs/heads/chore/')
     environment: ${{ github.ref }}
 
