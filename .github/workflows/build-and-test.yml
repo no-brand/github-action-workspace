@@ -1,8 +1,7 @@
 name: build-and-test
 
 on:
-  push:
-    branches: [ chore/github-action ]
+  workflow_call:
 
 jobs:
   build:
